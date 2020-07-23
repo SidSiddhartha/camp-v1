@@ -1,0 +1,34 @@
+<%- include("partials/header") %>
+
+<div class="container">
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Welcome to YelpCamp</h1>
+            <p>Visit all the best camping places in the world</p>
+            <p>
+                <a href="/camp/newcamp" role="button" class="btn btn-info">Add a New CampGround</a>
+            </p>
+        </div>
+    </div>
+
+    <!--Here Starts the main page for the rows and their attributes-->
+    <div class="container">
+        <div class="row text-align" style=display:flex;flex-wrap:wrap;text-align:center; ">
+            <%camp.forEach(function(camp){%>
+                <div class="col-md-3 col-sm-6">
+               
+                    <div class="thumbnail">
+                         <img src="<%=camp.image%>">
+                         <div class="caption">
+                            <strong><h4><%=camp.name%></h4></strong>
+                         </div>
+                    </div>
+                </div>
+             <%});%>
+            
+        </div>
+
+    </div>
+    
+</div>
+<%- include("partials/footer") %>
